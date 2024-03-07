@@ -4,7 +4,7 @@ const router = require("./routes/web/routes");
 const postRoutes = require("./routes/web/postRoutes");
 const { port } = require("./config");
 const hbs = require("hbs");
-var cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
