@@ -1,0 +1,60 @@
+{{>admin_header}}
+
+<body>
+    <div class="pt-5 pb-4">
+        <div class="container">
+            <div class="row align-items-center" data-aos="fade-up" data-aos-duration="1100">
+                <div class="col">
+                    <h2>User Details</h2>
+                </div>
+                <div class="col-auto">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="icon feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="/my-admin">Back to Home  </a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container">
+            <div class="row">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Key</th>
+                            <th class="text-center">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-title="Name" class="text-center"><b>Name</b></td>
+                            <td data-title="Value" class="text-center">{{Name}}</td>
+                        </tr>
+                        <tr>
+                            <td data-title="Email" class="text-center"><b>Email</b></td>
+                            <td data-title="Value" class="text-center">{{Email}}</td>
+                        </tr>
+                        <tr>
+                            <td data-title="Email" class="text-center"><b>Phone</b></td>
+                            <td data-title="Value" class="text-center">{{Phone}}</td>
+                        </tr>
+                        <tr>
+                            <td data-title="Email" class="text-center"><b>Address</b></td>
+                            <td data-title="Value" class="text-center">{{Address}}</td>
+                        </tr>
+                        <tr>
+                            <td data-title="Email" class="text-center"><b>Password</b></td>
+                            <td data-title="Value" class="text-center">{{Password}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="/my-admin/viewUser" class="th_btn mx-auto">Prev</a>
+                <a href="/my-admin/viewUser" class="th_btn mx-auto">Next</a>
+            </div>
+        </div>
+    </main>
+
+    {{>admin_footer}}

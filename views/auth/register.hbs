@@ -26,26 +26,32 @@
     <div class="container">
         <div class="form">
             <div class="login w-50 p-5 border rounded">
-                <form action="/register-admin" method="post">
+                <form action="/register-admin" method="post" enctype="multipart/form-data">
                     <div class="form-group mb-3">
                         <label for="Name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="Name" name="Name">
+                        <input type="text" class="form-control" id="Name" name="Name" minlength="2" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="Email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="Email" name="Email">
+                        <input type="email" class="form-control" id="Email" name="Email" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="Phone" class="form-label">Phone</label>
-                        <input type="tel" class="form-control" id="Phone" name="Phone">
+                        <input type="tel" placeholder="Ex. +91 9876543210" pattern="\+91 \d{10}" class="form-control"
+                            id="Phone" name="Phone" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="Profile" class="form-label">Profile Photo</label>
+                        <input type="file" class="form-control" id="Profile" name="Profile" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="Address" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="Address" name="Address">
+                        <input type="text" class="form-control" id="Address" name="Address" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="Password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="Password" name="Password">
+                        <input type="password" class="form-control" id="Password" name="Password" minlength="8"
+                            required>
                     </div>
                     <div class="form-group mb-3">
                         <input type="submit" value="Register" class="btn btn-primary">

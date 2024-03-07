@@ -2,8 +2,20 @@ const express = require("express");
 const route = express.Router();
 const users = require("../../users.json");
 const fs = require("fs");
+const multer = require('multer');
 
-route.post("/register-admin", (req, res) => {
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './views/uploads/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname + '-' + Date.now() + '.png');
+    }
+})
+
+const upload = multer({ storage: storage })
+
+route.post("/register-admin", upload.single('Profile'), (req, res) => {
     users.push(req.body);
     fs.writeFile("./users.json", JSON.stringify(users), (err) => {
         if (err) {
@@ -15,7 +27,7 @@ route.post("/register-admin", (req, res) => {
 })
 
 route.post("/login-admin", (req, res) => {
-    if(users.length != 0){
+    if (users.length != 0) {
         users.find((data) => {
             if (data.Email === req.body.Email) {
                 if (data.Password === req.body.Password) {
@@ -28,7 +40,7 @@ route.post("/login-admin", (req, res) => {
                 return res.render("auth/login.hbs", { user: "Username or Email not found<br>Please signup.." });
             }
         });
-    }else{
+    } else {
         return res.render("auth/login.hbs", { user: "Username or Email not found\nPlease signup.." });
     }
 })

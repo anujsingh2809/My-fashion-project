@@ -180,3 +180,18 @@ $( document ).ready(function() {
     $(".flt_left").toggleClass("showSidebar");
   });
 });
+
+
+function changeView(val){
+  let adminActive = document.getElementsByClassName("adminActive");
+  for(let i=0;i<adminActive.length; i++){
+    if(val === adminActive[i].id){
+      adminActive[i].classList.add("admin_show");
+      adminActive[i].classList.remove("admin_hide");
+    }
+    else{
+      adminActive[i].classList.remove("admin_show");
+      adminActive[i].classList.add("admin_hide");
+    }
+  }
+}
